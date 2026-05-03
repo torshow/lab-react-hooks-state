@@ -1,14 +1,13 @@
 import React from 'react'
 
-const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false)
-  // TODO: Implement dark mode toggle logic
-
+const DarkModeToggle = ({ darkMode, setDarkMode }) => {
   return (
-    <button>onClick={() => setDarkMode(!darkMode)}
-      {darkMode ? 'Toggle Light Mode' : 'Toggle Dark Mode'}
+    <div>
+      <button aria-label="toggle" onClick={() => setDarkMode(!darkMode)}>
+        {darkMode ? 'Toggle Light Mode' : 'Toggle Dark Mode'}
       </button>
+    </div>
   )
 }
 
-export default DarkModeToggle;
+export default DarkModeToggle

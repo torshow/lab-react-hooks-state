@@ -14,29 +14,24 @@ const App = () => {
   const [category, setCategory] = useState('all')
 
   return (
-    <div>
+    <div className={darkMode ? 'dark' : ''}>
       <h1>🛒 Shopping App</h1>
       <p>
         Welcome! Your task is to implement filtering, cart management, and dark
         mode.
       </p>
 
-      {/* TODO: Render DarkModeToggle and implement dark mode functionality */}
       <DarkModeToggle darkMode={darkMode} setDarkMode={setDarkMode}/>
 
-      {/* TODO: Implement category filter dropdown */}
       <label>Filter by Category: </label>
-      <select onChange={() => setCategory(e.target.value)}>
+      <select onChange={(e) => setCategory(e.target.value)}>
         <option value="all">All</option>
         <option value="Fruits">Fruits</option>
         <option value="Dairy">Dairy</option>
       </select>
 
-      <ProductList />
-
-      {/* TODO: Implement and render Cart component */}
       <ProductList category={category} cart={cart} setCart={setCart}/>
-      <cart cart={cart}/>
+      <Cart cart={cart}/>
     </div>
   )
 }
